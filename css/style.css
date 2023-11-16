@@ -4,31 +4,47 @@ body, html {
     padding: 0;
     height: 100%;
     background-color: black; /* Fondo negro para todo el sitio */
+    color: white; /* Color blanco para el texto */
+    position: relative; /* Posicionamiento relativo para el cuerpo */
+    font-family: 'Comic Neue', Arial, sans-serif; /* Fuente Comic Neue */
 }
 
 /* Contenedor principal */
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: start;
-    padding: 10px;
+    min-height: 100vh;
 }
 
 /* Ajustes para el logo */
 .logo img {
-    height: 50px; /* Tamaño más pequeño para el logo */
+    height: 50px; /* Tamaño para el logo */
     width: auto; /* Se mantiene la proporción del logo */
+    position: absolute; /* Posición absoluta para el logo */
+    top: 10px; /* Espacio desde la parte superior */
+    left: 10px; /* Espacio desde la izquierda */
 }
 
 /* Ajustes para el arte ASCII de la luna */
 .moon-art pre {
     color: white; /* Color del texto para el arte ASCII */
-    text-align: right; /* Alineación a la derecha */
     font-family: 'Courier New', monospace; /* Fuente de ancho fijo para mantener la estructura */
-    margin: 0; /* Eliminar cualquier margen por defecto */
+    font-size: 50%; /* Reduciendo el tamaño a la mitad */
+    position: absolute; /* Posición absoluta para el arte ASCII */
+    top: 10px; /* Espacio desde la parte superior */
+    right: 10px; /* Espacio desde la derecha */
+    line-height: 1; /* Ajustar el espacio entre líneas para conservar la estructura del arte ASCII */
 }
 
 /* Ajustes para el menú principal */
+.main-menu {
+    display: flex;
+    justify-content: center; /* Centrar los elementos del menú horizontalmente */
+    align-items: center; /* Centrar los elementos del menú verticalmente */
+    flex-grow: 1; /* Permitir que el menú ocupe el espacio disponible */
+}
+
 .main-menu ul {
     list-style-type: none;
     padding: 0;
@@ -36,19 +52,38 @@ body, html {
 
 .main-menu li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 20px; /* Espaciado entre los enlaces del menú */
 }
 
 .main-menu a {
-    color: white;
     text-decoration: none;
-}
-
-/* Ajustes para el contenido principal */
-.main-content {
     color: white;
-    padding: 20px;
-    text-align: center;
+    font-size: 1.2rem;
+    text-decoration: underline; /* Subrayado */
 }
 
-/* Asegúrate de que este estilo CSS esté vinculado correctamente a tu index.html */
+.main-menu a:hover span {
+    animation: wave 0.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Estilos para cada letra individual (span) dentro de los enlaces */
+.main-menu a span {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+/* Ajustes para la información de contacto */
+.contact-info {
+    position: absolute; /* Posición absoluta para la información de contacto */
+    bottom: 10px; /* Espacio desde la parte inferior */
+    left: 10px; /* Espacio desde la izquierda, ajustado para no superponerse al logo */
+}
