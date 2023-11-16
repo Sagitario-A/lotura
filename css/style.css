@@ -1,0 +1,54 @@
+/* Estilos globales */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black; /* Fondo negro para todo el sitio */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 10px;
+}
+
+/* Ajustes para el logo */
+.logo img {
+    height: 50px; /* Tamaño más pequeño para el logo */
+    width: auto; /* Se mantiene la proporción del logo */
+}
+
+/* Ajustes para el arte ASCII de la luna */
+.moon-art pre {
+    color: white; /* Color del texto para el arte ASCII */
+    text-align: right; /* Alineación a la derecha */
+    font-family: 'Courier New', monospace; /* Fuente de ancho fijo para mantener la estructura */
+    margin: 0; /* Eliminar cualquier margen por defecto */
+}
+
+/* Ajustes para el menú principal */
+.main-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.main-menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.main-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Ajustes para el contenido principal */
+.main-content {
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Asegúrate de que este estilo CSS esté vinculado correctamente a tu index.html */
