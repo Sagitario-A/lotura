@@ -1,0 +1,204 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Estilos globales */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    font-family: 'Comic Neue', Arial, sans-serif;
+    position: relative;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .moon-art pre {
+        font-size: 25%; /* Tamaño más pequeño para dispositivos móviles */
+    }
+    .main-menu li {
+        margin: 0 10px; /* Menos espacio entre ítems del menú en móviles */
+    }
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+/* Ajustes para el logo */
+.logo img {
+    height: 50px;
+    width: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* Ajustes para el arte ASCII de la luna */
+.moon-art pre {
+    user-select: none;
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-size: 50%;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    line-height: 1;
+}
+
+/* Ajustes para el menú principal */
+.main-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.main-menu ul {
+    padding: 0;
+}
+
+.main-menu li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.main-menu a {
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Estilos para cada letra individual (span) dentro de los enlaces */
+.main-menu a span {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+/* Aplicando la animación al hacer hover */
+.main-menu a:hover span {
+    animation: wave 0.5s ease-in-out infinite;
+    animation-delay: calc(var(--index) * 0.1s);
+}
+
+/* Definición de la animación de ola */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Ajustes para la información de contacto */
+.contact-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+/* Estilos para los copos de nieve */
+#snowflakeContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Estilos para las estrellas */
+#starContainer .star {
+    position: absolute;
+    color: white;
+    font-family: 'Courier New', monospace;
+    user-select: none;
+    pointer-events: none;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+/* Animación para el destello de las estrellas */
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+/* Estilos para los cometas */
+#cometContainer .comet {
+    position: absolute;
+    color: white;
+    font-family: 'Courier New', monospace;
+    user-select: none;
+    pointer-events: none;
+    animation: moveComet 5s linear;
+}
+
+/* Animación para el movimiento de los cometas */
+@keyframes moveComet {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(500px) translateY(100px); }
+}
+
+/* Estilos para el arte ASCII de España */
+.ascii-art {
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    font-size: 12px; /* Tamaño aumentado */
+    line-height: 1;
+    color: white;
+}
+
+    
+.ascii-art .ascii-link {
+    text-decoration: underline;
+    font-family: 'Comic Neue', Arial, sans-serif;
+    color: white; /* o cualquier otro color que prefieras */
+    cursor: pointer;
+}
+
+
+/* Estilos para los contenedores de eventos de cada ciudad */
+.eventos-ciudad {
+    position: absolute;
+    top: 50%; /* Ajustar según sea necesario */
+    right: 30%; /* Ajustar según sea necesario */
+    transform: translateY(-50%);
+    background-color: white; /* Color de fondo */
+    color: black; /* Color de texto */
+    padding: 20px;
+    border-radius: 10px;
+    display: none; /* Inicialmente ocultos */
+    z-index: 3;
+}
